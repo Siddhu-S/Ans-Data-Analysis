@@ -1,0 +1,40 @@
+Day,Store,Group Size,Side,Start Time,End Time,Checkout Time,Flavor Tour,Notes
+Thursday,Hatmakers,3,L,2025-07-24 18:14:49,2025-07-24 18:16:18,,No,
+Thursday,Hatmakers,2,R,2025-07-24 18:14:08,2025-07-24 18:19:18,2025-07-24 18:19:21,Yes,two transactions
+Thursday,Hatmakers,2,L,2025-07-24 18:16:43,2025-07-24 18:21:22,,Yes,
+Thursday,Hatmakers,2,R,2025-07-24 18:19:27,2025-07-24 18:23:45,2025-07-24 18:23:53,Yes,
+Thursday,Hatmakers,1,L,2025-07-24 18:21:34,2025-07-24 18:25:09,2025-07-24 18:25:20,Yes,
+Thursday,Hatmakers,3,L,2025-07-24 18:30:50,2025-07-24 18:37:12,2025-07-24 18:37:20,Yes,
+Thursday,Hatmakers,2,L,2025-07-24 18:37:23,2025-07-24 18:41:15,,Yes,
+Thursday,Hatmakers,3,R,2025-07-24 18:32:56,2025-07-24 18:41:33,2025-07-24 18:41:34,Yes,"multiple, spaced out single"
+Thursday,Hatmakers,4,L,2025-07-24 18:41:22,2025-07-24 18:45:41,2025-07-24 18:45:33,No,partial
+Thursday,Hatmakers,2,R,2025-07-24 18:41:41,2025-07-24 18:47:50,,Yes,
+Thursday,Hatmakers,3,L,2025-07-24 18:45:52,2025-07-24 18:52:28,2025-07-24 18:52:04,Yes,
+Thursday,Hatmakers,2,R,2025-07-24 18:47:54,2025-07-24 18:52:35,2025-07-24 18:52:36,Yes,
+Thursday,Hatmakers,4,R,2025-07-24 18:52:42,2025-07-24 18:57:24,2025-07-24 18:57:11,Yes,
+Thursday,Hatmakers,1,R,2025-07-24 18:57:31,2025-07-24 18:58:28,2025-07-24 18:58:31,No,
+Thursday,Hatmakers,1,L,2025-07-24 18:52:41,2025-07-24 18:58:38,2025-07-24 18:58:41,Yes,got half and half pints
+Thursday,Hatmakers,2,L,2025-07-24 18:58:46,2025-07-24 18:59:31,,No,only got one thing
+Thursday,Hatmakers,1,L,2025-07-24 18:59:42,2025-07-24 19:01:00,,No,
+Thursday,Hatmakers,1,L,2025-07-24 19:01:09,2025-07-24 19:02:45,,No,Partial
+Thursday,Hatmakers,2,R,2025-07-24 18:58:52,2025-07-24 19:03:40,2025-07-24 19:03:21,Yes,
+Thursday,Hatmakers,1,L,2025-07-24 19:02:50,2025-07-24 19:03:41,,No,
+Thursday,Hatmakers,1,L,2025-07-24 19:03:48,2025-07-24 19:05:22,,No,
+Thursday,Hatmakers,1,L,2025-07-24 19:05:25,2025-07-24 19:06:23,,No,
+Thursday,Hatmakers,2,L,2025-07-24 19:06:26,2025-07-24 19:07:35,,No,
+Thursday,Hatmakers,3,R,2025-07-24 19:03:56,2025-07-24 19:09:36,2025-07-24 19:09:03,No,Partial
+Thursday,Hatmakers,2,L,2025-07-24 19:07:39,2025-07-24 19:09:50,2025-07-24 19:09:51,No,Partial
+Thursday,Hatmakers,2,L,2025-07-24 19:10:07,2025-07-24 19:12:21,,No,
+Thursday,Hatmakers,4,R,2025-07-24 19:30:49,2025-07-24 19:39:23,2025-07-24 19:36:02,Yes,multiple; spaced out
+Thursday,Hatmakers,2,L,2025-07-24 19:31:51,2025-07-24 19:39:42,2025-07-24 19:39:48,Yes,
+Thursday,Hatmakers,2,L,2025-07-24 19:39:51,2025-07-24 19:45:21,,Yes,
+Thursday,Hatmakers,4,R,2025-07-24 19:39:37,2025-07-24 19:49:01,2025-07-24 19:36:02,Yes,multiple; spaced
+Thursday,Hatmakers,3,L,2025-07-24 19:45:37,2025-07-24 19:49:59,,Yes,
+Thursday,Hatmakers,1,L,2025-07-24 19:50:03,2025-07-24 19:51:35,2025-07-24 19:51:37,No,
+Thursday,Hatmakers,2,R,2025-07-24 19:49:05,2025-07-24 19:52:58,2025-07-24 19:52:59,No,partial
+Thursday,Hatmakers,1,L,2025-07-24 19:51:41,2025-07-24 19:54:51,,Yes,
+Thursday,Hatmakers,2,R,2025-07-24 19:53:02,2025-07-24 19:55:30,,Yes,
+Thursday,Hatmakers,2,L,2025-07-24 19:54:56,2025-07-24 19:58:20,,Yes,
+Thursday,Hatmakers,2,L,2025-07-24 19:54:56,2025-07-24 19:58:20,,Yes,
+Thursday,Hatmakers,2,L,2025-07-24 19:54:56,2025-07-24 19:58:20,,Yes,
+Thursday,Hatmakers,4,R,2025-07-24 19:55:34,2025-07-24 20:02:40,2025-07-24 20:02:46,Yes,
