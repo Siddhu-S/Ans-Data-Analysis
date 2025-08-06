@@ -5,7 +5,7 @@ import os
 
 st.title("Flavor Tour Manual Tracker")
 
-CSV_FILE = "manual_data.csv"
+CSV_FILE = "alldata270735.csv"
 
 for side in ["L", "R"]:
     for key in ["start_time", "end_time", "checkout_time"]:
