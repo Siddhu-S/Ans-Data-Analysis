@@ -5,20 +5,47 @@ import os
 
 st.title("Flavor Tour Manual Tracker")
 
-CSV_FILE = "alldata270735.csv"
+CSV_FILE = "flavor_tour_data.csv"
 
+# --- Init session state ---
 for side in ["L", "R"]:
-    for key in ["start_time", "end_time", "checkout_time"]:
+    for key in ["start_time", "end_time", "checkout_time", "reset"]:
         full_key = f"{side}_{key}"
         if full_key not in st.session_state:
             st.session_state[full_key] = ""
+    if f"group_size_{side}" not in st.session_state:
+        st.session_state[f"group_size_{side}"] = 1
+    if f"flavor_tour_{side}" not in st.session_state:
+        st.session_state[f"flavor_tour_{side}"] = "Yes"
+    if f"notes_{side}" not in st.session_state:
+        st.session_state[f"notes_{side}"] = ""
 
 left_col, right_col = st.columns(2)
 
+# --- Reset helper ---
+def reset_fields(side):
+    st.session_state[f"group_size_{side}"] = 1
+    st.session_state[f"{side}_start_time"] = ""
+    st.session_state[f"{side}_end_time"] = ""
+    st.session_state[f"{side}_checkout_time"] = ""
+    st.session_state[f"start_time_input_{side}"] = ""
+    st.session_state[f"end_time_input_{side}"] = ""
+    st.session_state[f"checkout_time_input_{side}"] = ""
+    st.session_state[f"flavor_tour_{side}"] = "Yes"
+    st.session_state[f"notes_{side}"] = ""
+    st.session_state[f"{side}_reset"] = False
+    st.rerun()
+
+# --- Main form logic ---
 def flavor_form(side, col):
+    # Apply reset before rendering any widgets
+    if st.session_state.get(f"{side}_reset", False):
+        reset_fields(side)
+
     with col:
         st.subheader(f"Side {side}")
 
+        # Time buttons
         if st.button(f"Set Start Time ({side})"):
             st.session_state[f"{side}_start_time"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         if st.button(f"Set End Time ({side})"):
@@ -26,13 +53,18 @@ def flavor_form(side, col):
         if st.button(f"Set Checkout Time ({side})"):
             st.session_state[f"{side}_checkout_time"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+        # Form
         with st.form(f"entry_form_{side}"):
             group_size = st.number_input(f"Group Size ({side})", min_value=1, step=1, key=f"group_size_{side}")
-            store = st.selectbox(f"Store Location ({side})", ["Hatmakers", "Dry Cleaning", "Electronics Repair"], key=f"store_{side}")
+            store = st.selectbox(
+                f"Store Location ({side})",
+                ["Hatmakers", "Dry Cleaning", "Electronics Repair"],
+                key=f"store_{side}"
+            )
 
             start_time = st.text_input("Start Time", value=st.session_state[f"{side}_start_time"], key=f"start_time_input_{side}")
             end_time = st.text_input("End Time", value=st.session_state[f"{side}_end_time"], key=f"end_time_input_{side}")
-            checkout_time = st.text_input("Checkout Time", value=st.session_state[f"{side}_checkout_time"], key=f"checkout_time_input_{side}")
+            checkout_time = st.text_input("Checkout Time (optional)", value=st.session_state[f"{side}_checkout_time"], key=f"checkout_time_input_{side}")
 
             flavor_tour = st.radio("Flavor Tour?", ["Yes", "No"], key=f"flavor_tour_{side}")
             notes = st.text_area("Notes (optional)", key=f"notes_{side}")
@@ -61,9 +93,15 @@ def flavor_form(side, col):
                 df.to_csv(CSV_FILE, index=False)
                 st.success(f"Entry for Side {side} saved!")
 
+                # Set reset flag → will trigger reset before next render
+                st.session_state[f"{side}_reset"] = True
+                st.rerun()
+
+# --- Render forms ---
 flavor_form("L", left_col)
 flavor_form("R", right_col)
 
+# --- Data Display ---
 st.markdown("---")
 if st.checkbox("Show collected data", key="show_data"):
     try:
@@ -75,6 +113,7 @@ if st.checkbox("Show collected data", key="show_data"):
     except FileNotFoundError:
         st.info("No data collected yet.")
 
+# --- Deletion ---
 if st.checkbox("I'm sure I want to delete all data", key="confirm_delete"):
     if st.button("❌ Delete All Data"):
         if os.path.exists(CSV_FILE):
