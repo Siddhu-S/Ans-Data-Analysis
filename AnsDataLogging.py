@@ -113,3 +113,15 @@ if st.checkbox("I'm sure I want to delete all data", key="confirm_delete"):
             st.success("All data has been deleted.")
         else:
             st.info("No data file found to delete.")
+
+st.markdown("### 📤 Export Data")
+if os.path.exists(CSV_FILE):
+    with open(CSV_FILE, "rb") as f:
+        st.download_button(
+            label="📥 Download flavor_tour_data.csv",
+            data=f,
+            file_name=CSV_FILE,
+            mime="text/csv"
+        )
+else:
+    st.info("No data available to download yet.")
